@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
   padding: 0 2rem;
 `;
 
-const Main = styled.main`
+export const Main = styled.main`
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -14,30 +14,41 @@ const Main = styled.main`
   align-items: center;
 `;
 
-const Footer = styled.footer`
+export const Footer = styled.footer`
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid ${({ theme }) => theme.colorSecondary};
+  border-top: 1px solid ${({ theme }) => theme.backgroundTertiary};
   justify-content: center;
   align-items: center;
+
+  gap: 1.5rem;
 `;
 
-const FooterLink = styled.a`
+export const FooterItem = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+
+  color: ${({ theme }) => theme.primary};
+
+  transition: color 0.15s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${({ theme }) => theme.secondary};
+  }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
   text-align: center;
 `;
 
-const TitleLink = styled.a`
+export const Link = styled.a`
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
 
@@ -48,84 +59,21 @@ const TitleLink = styled.a`
   }
 `;
 
-const Description = styled.p`
+export const Info = styled.p`
   margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-  text-align: center;
-`;
-
-const Code = styled.code`
+  padding: 0.75rem;
+  gap: 0.75rem;
   background: ${({ theme }) => theme.backgroundSecondary};
   border-radius: 5px;
-  padding: 0.75rem;
+
+  text-align: center;
+  line-height: 1.5;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
-`;
 
-const Grid = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    flex-direction: column;
-  }
 `;
-
-const Card = styled.a`
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid ${({ theme }) => theme.colorSecondary};
-  border-radius: 10px;
-  max-width: 300px;
-  background: ${({ theme }) => theme.backgroundSecondary};
-
-  transition: color 0.15s ease, border-color 0.15s ease;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: ${({ theme }) => theme.primary};
-    border-color: ${({ theme }) => theme.primary};
-  }
-`;
-
-const CardTitle = styled.h2`
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-`;
-
-const CardDescription = styled.p`
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-`;
-
-const Logo = styled.span`
-  height: 1em;
-  margin-left: 0.5rem;
-`;
-
-export {
-  Container,
-  Card,
-  CardDescription,
-  CardTitle,
-  Description,
-  Logo,
-  Grid,
-  Code,
-  Title,
-  TitleLink,
-  Footer,
-  FooterLink,
-  Main,
-};
